@@ -1,2 +1,1 @@
-# shopping-cart
-A shopping cart using react
+This is a shopping cart interface made using react through vite.
