@@ -1,0 +1,36 @@
+.container {
+    height: auto;
+    width: 100%;
+}
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+.listElements {
+    display: inline-block;
+    margin: 10px;
+    width: 520px;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    background-color: hsl(320, 83%, 65%);
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    margin: 10px;
+}
+.cardImages {
+    width: 200px;
+    height: auto;
+}
+.cardHeading {
+    color: black;
+    font-size: 80%;
+}
+.cardDescription {
+    color: black;
+    font-size: 70%;
+}
