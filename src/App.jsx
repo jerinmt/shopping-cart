@@ -1,18 +1,16 @@
-import { Link } from 'react-router-dom';
 import './App.css'
+import Categories from './components/categories/Categories';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   
   return (
     <>
+      <Navbar />
       <p>We provide the best products at the best prices. Check out our catalogue of products from different categories. Add 'em to your cart and checkout. You will get the products in 2 days.</p>
+      <p>We strive to provide highest quality products with each one gone through a rigorous check for quality. We have our base in India. Feel free to contact us at shoppersparadise@example.com</p>
       <h2>Categories</h2>
-      <ul>
-        <li><Link to="products/mensClothing">Men's Clothing</Link></li>
-        <li><Link to="products/womensClothing">Women's Clothing</Link></li>
-        <li><Link to="products/jewelery">Jewelery</Link></li>
-        <li><Link to="products/electronics">Electronics</Link></li>
-      </ul>
+      <Categories />
     </>
   );
 }

@@ -8,21 +8,30 @@ import MensClothing from './components/men\'s/MensClothing.jsx'
 import WomensClothing from './components/women\'s/WomensClothing.jsx'
 import Electronics from './components/electronics/Electronics.jsx'
 import Jewelery from './components/jewelery/Jewelery.jsx'
+import DefaultProducts from './components/allproducts/DefaultProducts.jsx'
+import Cart from './components/cart/Cart.jsx'
+import ErrorPage from './components/errorPage/ErrorPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "products",
     element: <Products />,
     children: [
+      { index: true, element: <DefaultProducts /> },
       { path: "mensClothing", element: <MensClothing /> },
       { path: "womensClothing", element: <WomensClothing /> },
       { path: "jewelery", element: <Jewelery /> },
       { path: "electronics", element: <Electronics /> },
     ],
+  },
+  {
+    path: "cart",
+    element: <Cart />,
   },
 ]);
 
