@@ -1,24 +1,18 @@
-import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import styles from './electronics.module.css';
+import ProductCard from "../ProductCard";
 
-function Electronics() {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => setProducts(data.filter(item => item.category ==="electronics")));
-    }, [products]);
+function Electronics({cartList}) {
+    const [products] = useOutletContext();
   
   return (
     <div className={styles.container}>
         <ul className={styles.list}>
         <li className={styles.listElements}>
             {products.map((item) => (
+                (item.category === "electronics") &&
                 <div key={item.id} className={styles.cards}>
-                    <h3 className={styles.cardHeading}>{item.title}</h3>
-                    <img src={item.image} alt={item.title} className={styles.cardImages}/>
-                    <p className={styles.cardDescription}>{item.description}</p>
-                    <p>Price: Rs. {item.price}</p>
+                    <ProductCard item={item} cartList={cartList}/>
                 </div>
             ))}
         </li>

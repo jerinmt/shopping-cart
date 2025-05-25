@@ -1,24 +1,18 @@
-import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import styles from './womensClothing.module.css';
+import ProductCard from "../ProductCard";
 
-function WomensClothing() {
-    const [clothing, setClothing] = useState([]);
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => setClothing(data.filter(item => item.category ==="women's clothing")));
-    }, [clothing]);
+function WomensClothing({cartList}) {
+    const [products] = useOutletContext();
   
   return (
     <div className={styles.container}>
         <ul className={styles.list}>
         <li className={styles.listElements}>
-            {clothing.map((item) => (
+            {products.map((item) => (
+                (item.category === "women's clothing") &&
                 <div key={item.id} className={styles.cards}>
-                    <h3 className={styles.cardHeading}>{item.title}</h3>
-                    <img src={item.image} alt={item.title} className={styles.cardImages}/>
-                    <p className={styles.cardDescription}>{item.description}</p>
-                    <p className={styles.cardPrice}>Price: Rs. {item.price}</p>
+                    <ProductCard item={item} cartList={cartList}/>
                 </div>
             ))}
         </li>

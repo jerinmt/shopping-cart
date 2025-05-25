@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
+import ProductCard from '../ProductCard';
 import styles from './default.module.css';
+import { useOutletContext } from "react-router-dom";
 
-function DefaultProducts() {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => setProducts(data));
-    }, [products]);
+function DefaultProducts({cartList }) {
+    const [products] = useOutletContext();
   
   return (
     <div className={styles.container}>
@@ -15,10 +11,7 @@ function DefaultProducts() {
         <li className={styles.listElements}>
             {products.map((item) => (
                 <div key={item.id} className={styles.cards}>
-                    <h3 className={styles.cardHeading}>{item.title}</h3>
-                    <img src={item.image} alt={item.title} className={styles.cardImages}/>
-                    <p className={styles.cardDescription}>{item.description}</p>
-                    <p>Price: Rs. {item.price}</p>
+                    <ProductCard item={item} cartList={cartList}/>
                 </div>
             ))}
         </li>
