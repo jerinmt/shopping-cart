@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
+import styles from './cart.module.css';
 
 function Cart({cartList}) {
   const [products] = useOutletContext();
@@ -12,11 +13,18 @@ function Cart({cartList}) {
     setTotal(totalPrice);
   }, [products, cartList]);
 
+  if(total === 0) {
+    return (
+      <div className={styles.cart}>
+        <h2>Shopping Cart</h2>
+        <p>Your cart is currently empty.</p>
+      </div>
+    );
+  }
   return (
     <>
-    <div className="cart">
+    <div className={styles.cart}>
       <h2>Shopping Cart</h2>
-      <p>Your cart is currently empty.</p>
       <ol>
         {products.map((item) => (
           (cartList[item.id-1] > 0) &&
@@ -25,8 +33,10 @@ function Cart({cartList}) {
           </li>
         ))}
       </ol>
+      <hr/>
       <p>Total: Rs.{total}</p>
     </div>
+    <button className={styles.btn} onClick={() => alert("Order placed successfully!")}>Place Order</button>
     </>
   );
 }

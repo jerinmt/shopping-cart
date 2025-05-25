@@ -23,9 +23,11 @@ function ProductCard({item, cartList}) {
             <h3>{item.title}</h3>
             <img src={item.image} alt={item.title}/>
             <p>{item.description}</p>
-            <p>Price: Rs. {item.price}</p>
-            <button onClick={addCartHandler}>Add 1 to Cart</button>
-            <button onClick={removeCartHandler}>Remove 1 from Cart</button>
+            <p><b>Price: Rs. {item.price}</b></p>
+            <div className='buttonset'>
+                <button className='plus' onClick={addCartHandler}>Add 1 to Cart</button>
+                <button className='minus' onClick={removeCartHandler}>Remove 1 from Cart</button>
+            </div>
             <p>Quantity in Cart: {quantity}</p>
         </>
     );

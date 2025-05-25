@@ -5,31 +5,42 @@
 .list {
     list-style-type: none;
     padding: 0;
-}
-.listElements {
-    display: inline-block;
-    margin: 10px;
-    width: 520px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 .cards {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(245, 235, 143);
-    padding: 10px;
-    border-radius: 5px;
-    width: 500px;
+    background-color: black;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
     margin: 10px;
 }
-.cardImages {
-    width: 200px;
-    height: auto;
+
+.cards p,
+.cards h3 {
+    color: #fff;
+    overflow-y: hidden;
 }
-.cardHeading {
-    font-size: 80%;
-    color: black;
+
+.cards h3 {
+    max-height: 1.4rem;
 }
-.cardDescription {
-    font-size: 70%;
-    color: black;
+.cards p {
+    max-height: 3.5rem;
+}
+.cards p:hover,
+.cards h3:hover {
+    max-height: none;
+}
+
+.cards button {
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }

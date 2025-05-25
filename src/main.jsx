@@ -15,5 +15,5 @@ createRoot(document.getElementById('root')).render(
     <footer>
       <p>&copy; 2025 Shopper's Paradise. All rights reserved.</p>
     </footer>
-  </StrictMode>,
-)
+  </StrictMode>
+);

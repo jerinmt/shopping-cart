@@ -17,7 +17,7 @@ function Products() {
     <>
       <Navbar />
       <div className={styles.container}>
-        <h2>Our Products</h2>
+        <h2>See Products</h2>
         <Categories inProducts={true}/>
         <Outlet context={[products]}/>
       </div>

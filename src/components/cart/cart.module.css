@@ -1,0 +1,16 @@
+.cart {
+    margin-bottom: 30px;
+    background-color: beige;
+    padding: 20px;
+}
+
+.btn {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #8ec412;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
